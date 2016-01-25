@@ -1,0 +1,13 @@
+services:
+	- Zenify\DoctrineMigrations\OutputWriter
+	- Zenify\DoctrineMigrations\EventSubscriber\ChangeCodingStandardEventSubscriber
+	- Zenify\DoctrineMigrations\EventSubscriber\RegisterMigrationsEventSubscriber
+	- Zenify\DoctrineMigrations\EventSubscriber\SetConsoleOutputEventSubscriber
+
+	# commands
+	- Doctrine\DBAL\Migrations\Tools\Console\Command\ExecuteCommand
+	- Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand
+	- Doctrine\DBAL\Migrations\Tools\Console\Command\GenerateCommand
+	- Doctrine\DBAL\Migrations\Tools\Console\Command\MigrateCommand
+	- Doctrine\DBAL\Migrations\Tools\Console\Command\StatusCommand
+	- Doctrine\DBAL\Migrations\Tools\Console\Command\VersionCommand

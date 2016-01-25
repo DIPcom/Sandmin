@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|striptags} | {/ifset}</title>
+        <script src="{$basePath}/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="{$basePath}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="{$basePath}/bower_components/iCheck/skins/all.css" rel="stylesheet" type="text/css">
+        <script src="{$basePath}/bower_components/iCheck/icheck.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="{$basePath}/css/AdminLTE.min.css">
+        <script src="{$basePath}/bower_components/select2/dist/js/select2.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="//nette.github.io/resources/js/netteForms.min.js"></script>
+        <script src="{$basePath}/js/app.min.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+        <link href="{$basePath}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+	<meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+            {include content}
+</body>
+</html>

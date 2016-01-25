@@ -1,0 +1,47 @@
+{block content}
+<div class="register-box">
+  <div class="register-logo">
+    <a n:href="Homepage:"><b>{_'new'|upper}</b>{_'user'|upper}</a>
+  </div>
+
+  <div class="register-box-body">
+    <p class="login-box-msg">{_'add_user'}</p>
+   
+    <form action="" method="post" n:name="addUserForm">
+        <div n:if="$form->hasErrors()" n:foreach="$form->errors as $error" class="alert alert-danger alert-dismissible">
+            {$error}
+        </div>
+        <div class="form-group has-feedback">
+          {input username}
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          {input img}
+          <span class="fa fa-picture-o form-control-feedback"></span>
+        </div>  
+          
+        <div class="form-group has-feedback">
+          {input email}
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          {input role}
+          
+        </div>  
+          
+        <div class="form-group has-feedback">
+          {input password}
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          {input password2}
+          <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+              {input submit}
+            </div>
+        </div>
+    </form>
+  </div>
+</div>

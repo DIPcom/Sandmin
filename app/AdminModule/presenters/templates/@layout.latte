@@ -1,0 +1,121 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|striptags} | {/ifset}</title>
+        <script src="{$basePath}/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="{$basePath}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        
+        <link href="{$basePath}/bower_components/iCheck/skins/all.css" rel="stylesheet" type="text/css">
+        <script src="{$basePath}/bower_components/iCheck/icheck.min.js" type="text/javascript"></script>
+        
+        
+        <link href="{$basePath}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="{$basePath}/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{$basePath}/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="{$basePath}/css/_all-skins.min.css">
+        
+        <script src="{$basePath}/js/DIP.js" type="text/javascript"></script>
+
+        <script src="{$basePath}/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.cs.min.js" type="text/javascript"></script>
+        
+        <script src="{$basePath}/bower_components/select2/dist/js/select2.min.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/netteForms.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/app.min.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+        <link href="{$basePath}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+	<meta name="viewport" content="width=device-width">
+</head>
+
+<body class="sidebar-mini skin-blue wysihtml5-supported fixed">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <a n:href="Homepage:" class="logo">
+            <span class="logo-mini">dip</span>
+          <span class="logo-lg"><b>DIP</b>SANDMIN</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+              
+            <ul class="nav navbar-nav">
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        {if isset($user_img)}
+                        <img src="{?echo$user_img?}" class="user-image" alt="User Image">
+                        {/if}
+                        <span class="hidden-xs">{$user->identity->data['name']}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            {if isset($user_img)}
+                          <img src="{?echo$user_img?}" class="img-circle" alt="User Image">
+                          {/if}
+                          <p>
+                            {$user->identity->data['name']}
+                            <small>{$user->identity->data['email']}</small>
+                          </p>
+                        </li>
+                        <li class="user-footer">
+                            <div class="pull-right">
+                                <a n:href="Settings:profil" class="btn btn-default btn-flat">{_'profile'}</a>
+                                <a n:href="Login:out" class="btn btn-warning btn-flat"><i class="fa fa-lock"></i> {_'sign_out'}</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+              
+            </ul>
+          </div>
+        </nav>
+      </header>
+                          
+      <aside class="main-sidebar">
+        <section class="sidebar">
+          
+            
+          <ul class="sidebar-menu">
+            <li class="treeview {$presenter->isLinkCurrent('Settings:*') ? 'active'}">
+              <a n:href="Settings:users">
+                <i class="fa fa-files-o"></i> <span>{_'settings'}</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu ">
+                <li n:if="$isAcces($role, 'Admin:Settings:profil')" class="{$presenter->isLinkCurrent('Settings:profil') ? 'active'}"><a n:href="Settings:profil"><i class="fa fa-circle-o"></i>{_'profile'}</a></li>
+                <li n:if="$isAcces($role, 'Admin:Settings:default')" class="{$presenter->isLinkCurrent('Settings:default') ? 'active'}"><a n:href="Settings:default"><i class="fa fa-circle-o"></i>{_'user_list'}</a></li>
+                <li n:if="$isAcces($role, 'Admin:Settings:role')" class="{$presenter->isLinkCurrent('Settings:role') ? 'active'}"><a n:href="Settings:role"><i class="fa fa-circle-o"></i>{_'role'}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      
+      <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+    <div class="content-wrapper">
+        {include content}
+    </div>
+    <script>
+        $(document).ready(function(){
+            DIP.Run();
+        });
+    </script>
+</body>
+</html>

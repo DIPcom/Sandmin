@@ -1,0 +1,120 @@
+config: 
+    name: 'Čeština'
+    date: 'd.m.Y'
+
+errors: 
+    #Different
+    field_required: 'Toto pole je povinné'
+    wrong_login: 'Špatně zadaný e-mail nebo heslo!'
+
+    #User
+    img: 'Nahraný soubor musí být obrázek ve formátu JPG, GIF nebo PNG'
+    fill_user_name: 'Vyplňte uživatelské jméno'
+    users_found: 'Uživatel s tímto e-mailem nebyl nalezen' 
+    role: 'Vyberte uživatelskou roly'
+    fill_role_name: 'Vyplňte nazev uživatelske roly'
+
+    #Email
+    fill_email: 'Vyplňte e-mail'
+    fill_email_success: 'Vyplňte e-mail ve správném tvaru.'
+    email_used: 'E-mail se již používá'
+    
+    #Password
+    fill_password: 'Zadejte heslo'
+    password_authentication: 'Zadejte heslo pro ověření'
+    passwords_match: 'Hesla se musí shodovat'
+    enter_password: 'Zadejte heslo'
+    enter_password_retry: 'Zadejte heslo pro ověření'
+    password_must_match: 'Hesla se musí shodovat'
+
+
+    #Integrs
+    int: 'Zadejte prosím platné celé číslo'
+
+local:
+    
+    #User
+    profile: 'Profil'
+    name: 'Jméno'
+    surname: 'Příjmení'
+    user_name: 'Uživatelské jméno'
+    name_surname: 'Jméno a příjmení'
+    user_list: 'Seznam uživatelů'
+    add_user: 'Noví uživatel'
+    id: 'ID'
+    last_login: 'Poslední přihlášení'
+    options: 'Možnosti'
+    new: 'Noví'
+    
+    user: 'Uživatel'
+    img: 'Obrázek'
+    logo: 'Logo'
+    email: 'E-mail'
+    
+    phone: 'Telefon'
+    use: 'Použít'
+
+    password: 'Heslo'
+    password_retry: 'Heslo znovu'
+    
+    #Role
+    role: 'Role'
+    role_name: 'Nazev role'
+    role_access: 'Povolene přistupy'
+    access_ban: 'Zakazane přistupy'
+    new_role: 'Nova role'
+    edit_role: 'Změnit roly'
+
+    #Form submit
+    submit: 'Odeslat'
+    save: 'Uložit'
+    edit: 'Upravit'
+    editing: 'Editovat'
+    add: 'Přidat'
+    create: 'Vytvořit'
+    remove: 'Odebrat'
+    register: 'Registrovat'
+    filter: 'Filtrovat'
+    show_all: 'Zobrazit vše'
+    login: 'Přihlásit'
+    clear: 'Smazat'
+    print: 'Vytisknout'
+    update: 'Aktualizovat'
+    back: 'Zpět'
+    join: 'Připojit se'
+    sign_out: 'Odhlásit se'
+
+
+    #Company 
+    title: 'Název'
+    company_name: 'Název společnosti'
+    account_number: 'Číslo účtu'
+    contact_person: 'Kontaktní osoba'
+    identification_number: 'IČO'
+    uid: 'DIČ'
+    vat: 'DPH'
+    bank: 'Bank'
+
+
+
+    #Adress
+    street_house_number: 'Ulice a číslo domu'
+    zip: 'PSČ'
+    city: 'Město'
+    country: 'Země'
+    web: 'Web'
+
+    #Different
+    info_approach: 'Info a přístup'
+    share_my_data: 'Sdílet moje data'
+    remember: 'Zapamatovat'
+    reports_subscribers: 'Přehledy odběratelů'
+    customer_list: 'Seznam odběratelů'
+    mark_as: 'Označit jako'
+    download: 'Stáhnout'
+    change_customer: 'Zněnit odběratele'
+    select_customer: 'Vybrat odběratele'
+    registration: 'Registrace'
+    settings: 'Nastavení'
+    description: 'Popisek'
+    

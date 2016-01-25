@@ -1,0 +1,55 @@
+{block content}
+<div class="content">
+    <div class="col-md-offset-4 col-md-4">
+              <!-- Widget: user widget style 1 -->
+        <div class="box box-widget widget-user">
+          <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-aqua-active">
+                <h3 class="widget-user-username">{$user->identity->data['name']}</h3>
+                <h5 class="widget-user-desc">{$user->identity->data['email']}</h5>
+            </div>
+            <div class="widget-user-image">
+                {if isset($user_img)}
+                    <img style="border-radius: 50%;" src="{?echo$user_img?}" class="user-image" alt="User Image">
+                {/if}
+            </div>
+            <div class="box-footer">
+                <form action="" method="post" n:name="editUserForm" style="margin-top: 20px;">
+        
+                    <div n:if="$form->hasErrors()" n:foreach="$form->errors as $error" class="alert alert-danger alert-dismissible">
+                        {$error}
+                    </div>
+
+                    <div class="form-group has-feedback">
+                      {input name}
+                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      {input img}
+                      <span class="fa fa-picture-o form-control-feedback"></span>
+                    </div>  
+
+                    <div class="form-group has-feedback">
+                      {input email}
+                      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      {input password}
+                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      {input password2}
+                      <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                          {input submit}
+                        </div>
+                    </div>
+                </form>
+           
+            </div>
+        </div>
+
+    </div>
+</div>

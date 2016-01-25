@@ -1,0 +1,34 @@
+{* Latte template *}
+{block paginator}  
+
+{if !isset($get_name)}
+    {var $get_name = 'page'}
+{/if}
+
+{if !isset($item_var_name)}
+   {var $item_var_name = 'paginator'} 
+{/if}
+
+{if !isset($ajax)}
+   {var $ajax = ''}
+   {else}
+   {var $ajax = 'ajax'}  
+{/if}
+
+{if isset($$item_var_name)}
+   
+    {var $page_items = $$item_var_name}
+    <ul class="pagination pagination-sm no-margin pull-right" >
+        
+        <li><a class="{$ajax}" n:href="this $get_name => $page_items['first']">«</a></li>
+        {foreach $page_items['items'] as $item}
+            <li class="{if $page_items['actual'] == $item }active{/if}"><a class="{$ajax}" n:href="this $get_name => $item">{$item}</a></li>
+        {/foreach}
+        <li><a class="{$ajax}" n:href="this $get_name => $page_items['last']">»</a></li>
+    </ul>
+{/if}
+
+
+
+
+

@@ -1,0 +1,31 @@
+{
+	"name": "dipcom/localization",
+	"description": "",
+	"homepage": "http://dipcom.cz",
+	"type": "library",
+	"license": ["MIT"],
+	"authors": [
+		{
+			"name": "Mykola Chomenko",
+			"homepage": "http://dipcom.cz",
+                        "email": "mykola.chomenko@dipcom.cz"
+		}
+	],
+	
+	"require": {
+		"nette/di": "~2.2"
+	},
+	"require-dev": {
+		"nette/tester": "@dev"
+	},
+	"autoload": {
+		"psr-0": {
+			"DIPcom\\Localization\\": "src/"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0-dev"
+		}
+	}
+}

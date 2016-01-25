@@ -1,0 +1,71 @@
+{block content}
+<div class="content">
+  <div class="register-logo">
+     
+     {if  $edit_user->img_base64}
+        <img style="border-radius: 50%;" src="{?echo $edit_user->img_base64;}">
+     {/if}
+     <br>
+     <a n:href="Homepage:"><b>{_'user'} </b>#{$presenter->getParam('id')}</a>
+     
+  </div>
+
+  <div class="col-md-offset-3 col-md-3">
+    <div class="box">
+        <div class="box-body">
+            <p class="login-box-msg">{_'info_approach'}</p>
+            <form action="" method="post" n:name="adminEditUserInfoForm">
+                <div n:if="$form->hasErrors()" n:foreach="$form->errors as $error" class="alert alert-danger alert-dismissible">
+                    {$error}
+                </div>
+                <div class="form-group has-feedback">
+                    {input name}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    {input img}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    {input email}
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    {input role}
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        {input submit}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="box">
+        <div class="box-body">
+            <p class="login-box-msg">{_'password'}</p>
+            <form action="" method="post" n:name="adminEditPassUserForm">
+                <div n:if="$form->hasErrors()" n:foreach="$form->errors as $error" class="alert alert-danger alert-dismissible">
+                    {$error}
+                </div>
+                <div class="form-group has-feedback">
+                    {input password}
+                    <i class="form-control-feedback fa fa-lock"></i>
+                </div>
+                <div class="form-group has-feedback">
+                    {input password2}
+                    <i class="form-control-feedback fa fa-lock"></i>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        {input submit}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+
+</div>

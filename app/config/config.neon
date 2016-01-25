@@ -1,0 +1,55 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+
+
+php:
+	date.timezone: Europe/Prague
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+doctrine:
+        user: root
+        password: 
+        dbname: sandmin
+        metadata:
+            App: %appDir%
+
+migrations:
+        codingStandard: tabs
+        namespace: DIPinvoices\Migrations
+        dirs:
+            - %appDir%/DIP/Migrations
+localization:
+        local_dir: %appDir%\Localization
+        default_lang: cs
+extensions:
+        console: Kdyby\Console\DI\ConsoleExtension
+        events: Kdyby\Events\DI\EventsExtension
+        annotations: Kdyby\Annotations\DI\AnnotationsExtension
+        doctrine: Kdyby\Doctrine\DI\OrmExtension
+        userManager: DIPcom\UserManager\DI\UserManagerExtension
+        localization: DIPcom\Localization\DI\LocalizationExtension
+
+        migrations: Zenify\DoctrineMigrations\DI\MigrationsExtension
+        - Symnedi\EventDispatcher\DI\EventDispatcherExtension
+
+session:
+	expiration: 14 days
+
+
+services:
+        - App\Forms\SignFormFactory
+        - App\Forms\AddUserFactory
+        - App\Forms\EditUserFactory
+        - App\Forms\AdminEditUserFactory
+        - App\Forms\AddRoleFactory
+        - App\Forms\EditRoleFactory
+
+        router: App\RouterFactory::createRouter

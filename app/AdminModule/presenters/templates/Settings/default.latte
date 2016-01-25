@@ -1,0 +1,44 @@
+{block content}
+<section class="content-header">
+    <h1>
+        {_'user_list'}
+    </h1>
+
+</section>
+<div class="content">
+
+    <div class="box">
+        
+        <div class="box-body">
+            <span class="pull-right">
+                <a class="btn btn-success btn-flat" n:href="Settings:addUser">{_'add_user'}</a>
+            </span>
+            <table class="table table-hover col-xs-12 pull-left">
+                <tbody>
+                    <tr>
+                        <td>{_'id'}</td>
+                        <td>{_'user_name'}</td>
+                        <td>{_'email'}</td>
+                        <td>{_'role'}</td>
+                        <td>{_'last_login'}</td>
+                        <td>{_'options'}</td>
+                    </tr>
+                    <tr n:foreach="$users as $user">
+                        <td>#{$user->id}</td>
+                        <td>{$user->name}</td>
+                        <td>{$user->email}</td>
+                        <td>{$user->role->name}</td>
+                        <td>{$user->last_log_date|date:'d.m.Y H:m:i'}</td>
+                            <td>
+                                <a n:href="EditUser 'id'=>$user->id" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> {_'editing'}</a>
+                                {if $user->id !== 1}
+                                <a n:href="RemoveUser! $user->id" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> {_'clear'}</a>
+                                {/if}
+                            </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  
+</div>

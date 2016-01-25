@@ -1,0 +1,35 @@
+{block content}
+<div class="login-box">
+      <div class="login-logo">
+        <a n:href="Homepage:"><b>DIP</b>SANDMIN</a>
+      </div>
+      <div class="login-box-body">
+        <p class="login-box-msg">{_'login'}</p>
+        
+        <form action="" method="post" n:name="signInForm">
+            <div n:if="$form->hasErrors()" n:foreach="$form->errors as $error" class="alert alert-danger alert-dismissible">
+            {$error}
+        </div>
+          <div class="form-group has-feedback">
+            {input email}
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            {input password}
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="checkbox">
+                <label>
+                  {input remember}
+                </label>
+              </div>
+            </div>
+            <div class="col-xs-12 text-right" >
+               {input submit}
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
