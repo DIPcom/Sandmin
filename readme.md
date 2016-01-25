@@ -5,6 +5,7 @@ DIP Sandmin
 
 - [Nette Framework](https://github.com/nette/nette)
 - [Kdyby Doctrine](https://github.com/Kdyby/Doctrine)
+- [Zenify DoctrineMigrations](https://github.com/Zenify/DoctrineMigrations)
 - [DIPcom Localization](https://github.com/DIPcom/Localization)
 - [DIPcom UserManager](https://github.com/DIPcom/UserManager)
 - [DIPcom DIPjs](https://github.com/DIPcom/DIPjs)
